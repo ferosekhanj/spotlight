@@ -79,7 +79,7 @@ namespace Spotlight
         {
             if( e.KeyCode == Keys.F1)
             {
-                MessageBox.Show("Esc - Quit\nUp/Down - Change spotlight size\nRight - Switch monitors");
+                MessageBox.Show("Esc - Quit\nUp/Down - Change spotlight size\nRight - Switch monitors\n-Ferose Khan J, 4 Dec 2019.");
             }
             else if( e.KeyCode == Keys.Escape)
             {
