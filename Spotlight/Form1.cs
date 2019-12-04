@@ -77,26 +77,28 @@ namespace Spotlight
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if( e.KeyCode == Keys.F1)
+            switch (e.KeyCode)
             {
-                MessageBox.Show("Esc - Quit\nUp/Down - Change spotlight size\nRight - Switch monitors\n-Ferose Khan J, 4 Dec 2019.");
-            }
-            else if( e.KeyCode == Keys.Escape)
-            {
-                this.Close();
-            }
-            else if( e.KeyCode == Keys.Up)
-            {
-                spotlightSize += 50;
-            }
-            else if (e.KeyCode == Keys.Down)
-            {
-                spotlightSize -= 50;
-            }
-            else if(e.KeyCode == Keys.Right)
-            {
-                currentMonitor = Screen.AllScreens[++currentMonitorIndex % Screen.AllScreens.Length];
-                MoveForm();
+                case Keys.F1:
+                    MessageBox.Show("Esc - Quit\nUp/Down - Change spotlight size\nRight/Left - Switch monitors\n-Ferose Khan J, 4 Dec 2019.", "Quick help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case Keys.Escape:
+                    this.Close();
+                    break;
+                case Keys.Up:
+                    spotlightSize += 50;
+                    break;
+                case Keys.Down:
+                    spotlightSize -= 50;
+                    break;
+                case Keys.Right:
+                    currentMonitor = Screen.AllScreens[++currentMonitorIndex % Screen.AllScreens.Length];
+                    MoveForm();
+                    break;
+                case Keys.Left:
+                    currentMonitor = Screen.AllScreens[++currentMonitorIndex % Screen.AllScreens.Length];
+                    MoveForm();
+                    break;
             }
         }
 
